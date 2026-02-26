@@ -49,7 +49,7 @@ const telefonosDirectorio = [
     color: "blue",
     telefonos: [
       { numero: "310 408 8621", nota: "Principal · WhatsApp" },
-      { numero: "414 723 4991", nota: "" },
+      { numero: "314 723 4991", nota: "" },
       { numero: "320 489 6021", nota: "" },
     ],
   },
@@ -218,12 +218,13 @@ export default function ContactoPage() {
                     <li key={tel.numero} className="flex flex-col gap-0.5">
                       <a
                         href={`tel:+57${tel.numero.replace(/\s/g, "")}`}
-                        className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                        className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
                       >
-                        {tel.numero}
+                        <Phone className="h-3.5 w-3.5 text-muted-foreground flex-shrink-0" />
+                        +57 {tel.numero}
                       </a>
                       {tel.nota && (
-                        <span className="text-xs text-accent font-semibold">{tel.nota}</span>
+                        <span className="pl-5 text-xs text-accent font-semibold">{tel.nota}</span>
                       )}
                     </li>
                   ))}
