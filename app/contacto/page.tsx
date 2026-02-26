@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { MapPin, Phone, Mail, Clock, MessageCircle, Building2, AlertTriangle } from "lucide-react"
+import { Phone, Mail, Clock, MessageCircle, Building2, AlertTriangle } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Contacto | Ruge Seguros",
@@ -22,6 +22,52 @@ const sedes = [
     telefono: "310 408 8621",
     horario: "Lun - Vie: 8:00 AM - 5:00 PM | Sab: 8:00 AM - 12:00 PM",
     mapa: null,
+  },
+]
+
+const correosDirectorio = [
+  {
+    area: "Comercial",
+    color: "blue",
+    correos: ["Ruge.asesores@gmail.com", "rugeasesorestecnico@gmail.com"],
+  },
+  {
+    area: "Cartera",
+    color: "purple",
+    correos: ["rrbdp@hotmail.com", "martha.rugeasesores@gmail.com"],
+  },
+  {
+    area: "Tesorería y Caja",
+    color: "green",
+    correos: ["hilda.rugeasesores@gmail.com"],
+  },
+]
+
+const telefonosDirectorio = [
+  {
+    area: "Comercial",
+    color: "blue",
+    telefonos: [
+      { numero: "310 408 8621", nota: "Principal · WhatsApp" },
+      { numero: "414 723 4991", nota: "" },
+      { numero: "320 489 6021", nota: "" },
+    ],
+  },
+  {
+    area: "Cartera",
+    color: "purple",
+    telefonos: [
+      { numero: "312 341 1443", nota: "" },
+      { numero: "312 449 4476", nota: "" },
+      { numero: "314 530 6390", nota: "" },
+    ],
+  },
+  {
+    area: "Tesorería y Caja",
+    color: "green",
+    telefonos: [
+      { numero: "312 570 7132", nota: "" },
+    ],
   },
 ]
 
@@ -90,9 +136,9 @@ export default function ContactoPage() {
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100">
                 <Mail className="h-7 w-7 text-blue-600" />
               </div>
-              <h3 className="mt-4 font-bold text-primary">Correo Comercial</h3>
-              <p className="mt-2 text-sm text-muted-foreground">Ruge.asesores@gmail.com</p>
-              <span className="mt-2 text-xs text-accent font-semibold">Respuesta en 24h</span>
+              <h3 className="mt-4 font-bold text-primary">Correos</h3>
+              <p className="mt-2 text-sm text-muted-foreground">5 correos disponibles</p>
+              <span className="mt-2 text-xs text-accent font-semibold">Ver directorio abajo</span>
             </a>
 
             <div className="flex flex-col items-center rounded-2xl bg-background border border-border p-6 text-center">
@@ -103,6 +149,87 @@ export default function ContactoPage() {
               <p className="mt-2 text-sm text-muted-foreground">Lun - Vie: 8am - 5pm</p>
               <span className="mt-2 text-xs text-accent font-semibold">Sab: 8am - 12pm</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Directorio de Correos */}
+      <section className="py-16 bg-background">
+        <div className="mx-auto max-w-6xl px-4 lg:px-8">
+          <h2 className="text-center text-2xl font-extrabold text-primary sm:text-3xl">Correos Electrónicos</h2>
+          <p className="mt-4 text-center text-muted-foreground max-w-2xl mx-auto">
+            Escríbenos al área correspondiente y te responderemos a la brevedad.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {correosDirectorio.map((area) => (
+              <div
+                key={area.area}
+                className="rounded-2xl bg-card border border-border p-6"
+              >
+                <div className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold mb-4 ${
+                  area.color === "blue" ? "bg-blue-100 text-blue-700" :
+                  area.color === "purple" ? "bg-purple-100 text-purple-700" :
+                  "bg-green-100 text-green-700"
+                }`}>
+                  <Mail className="h-3 w-3" />
+                  {area.area}
+                </div>
+                <ul className="space-y-2">
+                  {area.correos.map((correo) => (
+                    <li key={correo}>
+                      <a
+                        href={`mailto:${correo}`}
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors break-all"
+                      >
+                        {correo}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Directorio de Teléfonos */}
+      <section className="py-16 bg-card">
+        <div className="mx-auto max-w-6xl px-4 lg:px-8">
+          <h2 className="text-center text-2xl font-extrabold text-primary sm:text-3xl">Directorio Telefónico</h2>
+          <p className="mt-4 text-center text-muted-foreground max-w-2xl mx-auto">
+            Comunícate directamente con el área que necesitas.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {telefonosDirectorio.map((area) => (
+              <div
+                key={area.area}
+                className="rounded-2xl bg-background border border-border p-6"
+              >
+                <div className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold mb-4 ${
+                  area.color === "blue" ? "bg-blue-100 text-blue-700" :
+                  area.color === "purple" ? "bg-purple-100 text-purple-700" :
+                  "bg-green-100 text-green-700"
+                }`}>
+                  <Phone className="h-3 w-3" />
+                  {area.area}
+                </div>
+                <ul className="space-y-3">
+                  {area.telefonos.map((tel) => (
+                    <li key={tel.numero} className="flex flex-col gap-0.5">
+                      <a
+                        href={`tel:+57${tel.numero.replace(/\s/g, "")}`}
+                        className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                      >
+                        {tel.numero}
+                      </a>
+                      {tel.nota && (
+                        <span className="text-xs text-accent font-semibold">{tel.nota}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>

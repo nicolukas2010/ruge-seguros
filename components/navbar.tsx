@@ -34,13 +34,13 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-card/95 backdrop-blur-sm border-b border-border/50">
-      <div className="mx-auto flex h-28 max-w-7xl items-center justify-between px-4 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <img
             src="/ruge-logo.png"
             alt="Ruge Asesores de Seguros"
-            className="h-24 w-auto"
+            className="h-14 w-auto"
           />
         </Link>
 

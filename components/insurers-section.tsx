@@ -27,25 +27,11 @@ export function InsurersSection() {
       </div>
 
       {/* Infinite scrolling carousel */}
-      <div className="mt-14 relative">
-        <div className="flex animate-scroll">
-          {/* First set of logos */}
-          {insurers.map((insurer, index) => (
+      <div className="mt-14 overflow-hidden">
+        <div className="flex w-max animate-scroll">
+          {[...insurers, ...insurers].map((insurer, index) => (
             <div
-              key={`first-${index}`}
-              className="flex-shrink-0 mx-4 flex h-32 w-60 items-center justify-center rounded-xl border border-border bg-card p-5"
-            >
-              <img
-                src={insurer.logo || "/placeholder.svg"}
-                alt={insurer.name}
-                className="h-20 w-auto object-contain"
-              />
-            </div>
-          ))}
-          {/* Duplicate set for seamless loop */}
-          {insurers.map((insurer, index) => (
-            <div
-              key={`second-${index}`}
+              key={index}
               className="flex-shrink-0 mx-4 flex h-32 w-60 items-center justify-center rounded-xl border border-border bg-card p-5"
             >
               <img
@@ -64,11 +50,12 @@ export function InsurersSection() {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-3808px);
           }
         }
         .animate-scroll {
-          animation: scroll 18s linear infinite;
+          animation: scroll 20s linear infinite;
+          will-change: transform;
         }
         .animate-scroll:hover {
           animation-play-state: paused;
