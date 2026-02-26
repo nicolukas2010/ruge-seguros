@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const aseguradoras = [
   {
     name: "SURA",
-    logo: "/sura-seguros-logo.jpg",
+    logo: "/sura-seguros-logo.png",
     url: "https://pagos.segurossura.com.co/pagos",
   },
   {
@@ -20,27 +20,27 @@ const aseguradoras = [
   },
   {
     name: "AXA Colpatria",
-    logo: "/axa-colpatria-seguros-logo.jpg",
+    logo: "/axa-colpatria-seguros-logo.png",
     url: "https://www.axacolpatria.co/pagosenlinea/opcionespago",
   },
   {
     name: "Mapfre",
-    logo: "/mapfre-seguros-logo.jpg",
+    logo: "/mapfre-seguros-logo.png",
     url: "https://cotiza.mapfre.com.co/pagosWeb/",
   },
   {
-    name: "Seguros Bolivar",
-    logo: "/seguros-bolivar-logo.jpg",
+    name: "Seguros Bolívar",
+    logo: "/seguros-bolivar-logo.png",
     url: "https://recaudos.segurosbolivar.com/",
   },
   {
     name: "Seguros del Estado",
-    logo: "/seguros-del-estado-logo.jpg",
+    logo: "/seguros-del-estado-logo.png",
     url: "https://portaldepago.segurosdelestado.com/",
   },
   {
     name: "Equidad Seguros",
-    logo: "/equidad-seguros-logo.jpg",
+    logo: "/equidad-seguros-logo.png",
     url: "https://servicios.laequidadseguros.coop/clientes",
   },
   {
@@ -50,13 +50,33 @@ const aseguradoras = [
   },
   {
     name: "HDI Seguros",
-    logo: "/hdi-seguros-logo.jpg",
+    logo: "/hdi-seguros-logo.png",
     url: "https://portal.cliente.hdiseguros.com.co/",
   },
   {
     name: "SBS Seguros",
-    logo: "/sbs-seguros-logo.jpg",
+    logo: "/sbs-seguros-logo.png",
     url: "https://portal.sbseguros.co/",
+  },
+  {
+    name: "Aseguradora Solidaria",
+    logo: "/aseguradora-solidaria-logo.png",
+    url: "https://www.solipagosonline.com.co/UIPasarelaPagos/",
+  },
+  {
+    name: "Previsora Seguros",
+    logo: "/previsora-seguros-logo.png",
+    url: "https://www.previsora.gov.co/previpagos",
+  },
+  {
+    name: "Mundial Seguros",
+    logo: "/mundial-seguros-logo.png",
+    url: "https://www.segurosmundial.com.co/pagos/",
+  },
+  {
+    name: "Qualitas",
+    logo: "/qualitas-seguros-logo.png",
+    url: "https://www.qualitascolombia.com.co/en/pago-de-poliza",
   },
 ]
 

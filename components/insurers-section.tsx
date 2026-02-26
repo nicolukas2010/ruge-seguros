@@ -1,20 +1,20 @@
 "use client"
 
 const insurers = [
-  { name: "Sura", logo: "/sura-seguros-logo.jpg" },
-  { name: "AXA Colpatria", logo: "/axa-colpatria-seguros-logo.jpg" },
-  { name: "Aseguradora Solidaria", logo: "/aseguradora-solidaria-logo.jpg" },
-  { name: "Equidad Seguros", logo: "/equidad-seguros-logo.jpg" },
+  { name: "Sura", logo: "/sura-seguros-logo.png" },
+  { name: "AXA Colpatria", logo: "/axa-colpatria-seguros-logo.png" },
+  { name: "Aseguradora Solidaria", logo: "/aseguradora-solidaria-logo.png" },
+  { name: "Equidad Seguros", logo: "/equidad-seguros-logo.png" },
   { name: "Allianz", logo: "/allianz-seguros-logo.png" },
-  { name: "Seguros Bolívar", logo: "/seguros-bolivar-logo.jpg" },
-  { name: "HDI Seguros", logo: "/hdi-seguros-logo.jpg" },
+  { name: "Seguros Bolívar", logo: "/seguros-bolivar-logo.png" },
+  { name: "HDI Seguros", logo: "/hdi-seguros-logo.png" },
   { name: "Zurich", logo: "/zurich-seguros-logo.png" },
-  { name: "SBS Seguros", logo: "/sbs-seguros-logo.jpg" },
-  { name: "Seguros del Estado", logo: "/seguros-del-estado-logo.jpg" },
-  { name: "Mapfre", logo: "/mapfre-seguros-logo.jpg" },
-  { name: "Previsora", logo: "/previsora-seguros-logo.jpg" },
-  { name: "Mundial", logo: "/mundial-seguros-logo.jpg" },
-  { name: "Qualitas", logo: "/qualitas-seguros-logo.jpg" },
+  { name: "SBS Seguros", logo: "/sbs-seguros-logo.png" },
+  { name: "Seguros del Estado", logo: "/seguros-del-estado-logo.png" },
+  { name: "Mapfre", logo: "/mapfre-seguros-logo.png" },
+  { name: "Previsora", logo: "/previsora-seguros-logo.png" },
+  { name: "Mundial", logo: "/mundial-seguros-logo.png" },
+  { name: "Qualitas", logo: "/qualitas-seguros-logo.png" },
 ]
 
 export function InsurersSection() {
@@ -33,12 +33,12 @@ export function InsurersSection() {
           {insurers.map((insurer, index) => (
             <div
               key={`first-${index}`}
-              className="flex-shrink-0 mx-4 flex h-28 w-52 items-center justify-center rounded-xl border border-border bg-card p-5"
+              className="flex-shrink-0 mx-4 flex h-32 w-60 items-center justify-center rounded-xl border border-border bg-card p-5"
             >
-              <img 
-                src={insurer.logo || "/placeholder.svg"} 
-                alt={insurer.name} 
-                className="h-14 w-auto object-contain" 
+              <img
+                src={insurer.logo || "/placeholder.svg"}
+                alt={insurer.name}
+                className="h-20 w-auto object-contain"
               />
             </div>
           ))}
@@ -46,12 +46,12 @@ export function InsurersSection() {
           {insurers.map((insurer, index) => (
             <div
               key={`second-${index}`}
-              className="flex-shrink-0 mx-4 flex h-28 w-52 items-center justify-center rounded-xl border border-border bg-card p-5"
+              className="flex-shrink-0 mx-4 flex h-32 w-60 items-center justify-center rounded-xl border border-border bg-card p-5"
             >
-              <img 
-                src={insurer.logo || "/placeholder.svg"} 
-                alt={insurer.name} 
-                className="h-14 w-auto object-contain" 
+              <img
+                src={insurer.logo || "/placeholder.svg"}
+                alt={insurer.name}
+                className="h-20 w-auto object-contain"
               />
             </div>
           ))}
@@ -68,7 +68,7 @@ export function InsurersSection() {
           }
         }
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 18s linear infinite;
         }
         .animate-scroll:hover {
           animation-play-state: paused;
